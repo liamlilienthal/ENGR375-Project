@@ -1,0 +1,9 @@
+const int sensorPin=A10; //will change if different pin is selected
+void setup() {
+  Serial.begin(9600);
+}
+
+void loop() {
+  int pot= analogRead(sensorPin); 
+Serial.println(pot); //check serial plotter to see if potentiometer is working 
+}
