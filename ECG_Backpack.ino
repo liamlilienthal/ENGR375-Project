@@ -1,3 +1,17 @@
+/*
+ECG Backpack Code
+
+This Code collects ECG signals using a 3 electrode BITalino on the user's chest. The code takes an average reading over ten readins to produce a HR. The HR is compared to a threshold set by the user and feedback is given to the user through the Blufruit Application, and LED connected to the backpack. 
+
+The Circuit:
+ -Battery Connected to Adafruit Flora
+ -ECG Extension of BITalino
+ -Output to Adafruit Application using Bluetooth
+ -LED Output when HR exceeds threshold
+ 
+ Created Monday April 27, 2020
+ By: Gabi Griffith and Liam Lilienthal
+ */
 
 //BLUETOOTH
 #include<avr/power.h>
