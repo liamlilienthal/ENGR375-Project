@@ -108,6 +108,16 @@ void loop() {
      beatCount = 0;
      beatIntervalSum = 0;
    }
+   //Serial Print (Uncomment if connected to the computer)
+   // Serial.print(HR);
+  // Serial.print(", ");
+  // Serial.print(pulse);
+  // Serial.print(", ");
+  // Serial.print(sensorAvg);
+ //  Serial.print(", ");
+  // Serial.println(threshold);
+   
+   //Bluetooth Print (uncomment if printing via bluetooth)
    ble.print(HR);
    ble.print(", ");
    ble.print(pulse);
