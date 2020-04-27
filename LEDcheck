@@ -1,0 +1,8 @@
+int pinnumber=9; //pin of LED 
+
+void setup() {
+Serial.begin(9600);
+pinMode(pinnumber, OUTPUT); 
+digitalWrite(pinnumber, HIGH); //turn LED pin on high to turn on the LED
+
+}
