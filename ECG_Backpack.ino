@@ -17,12 +17,12 @@ The Circuit:
 #include<avr/power.h>
 #include <Arduino.h>
 #include "Adafruit_BLE.h" //extension for Bluefruit Component
-#include "Adafruit_BluefruitLE_UART.h"// Bluetooth COmmunication
+#include "Adafruit_BluefruitLE_UART.h"// Bluetooth Communication
 #include "BluefruitConfig.h" //see other tab
 Adafruit_BluefruitLE_UART ble(BLUEFRUIT_HWSERIAL_NAME, BLUEFRUIT_UART_MODE_PIN); //see other tab
 
 //ECG Variables
-const int ECG = A0; //May need to change based on flora
+const int ECG = A7; //May need to change based on flora
 int sensorValue = 0;
 const int LEDpin = 9;
 const int interval = 10;
@@ -80,7 +80,7 @@ void loop() {
     //Take average
     sensorAvg = sensorSum/count;
     if(sensorAvg > threshold){
-      digitalWrite(LEDpin, HIGH);
+      
       
       //calculate time between beats
       beatTime = millis();
@@ -95,7 +95,6 @@ void loop() {
       
     }
     else{
-      digitalWrite(LEDpin, LOW);
       pulse = 0;
     }
    if(beatCount == interval){
@@ -107,6 +106,14 @@ void loop() {
 
      beatCount = 0;
      beatIntervalSum = 0;
+   }
+   
+   if(HR > 90){
+    digitalWrite(LEDpin, HIGH);
+   }// If the resting HR is above 90, or another preset HR, turn the LED on. HR number can be changed based off of chart in Instructable
+   
+   else{
+    digitalWrite(LEDpin, LOW);
    }
    //Serial Print (Uncomment if connected to the computer)
    // Serial.print(HR);
