@@ -22,7 +22,7 @@ The Circuit:
 Adafruit_BluefruitLE_UART ble(BLUEFRUIT_HWSERIAL_NAME, BLUEFRUIT_UART_MODE_PIN); //see other tab
 
 //ECG Variables
-const int ECG = A7; //May need to change based on flora
+const int ECG = A7; //May need to change based on flora pin chosen
 int sensorValue = 0;
 const int LEDpin = 9;
 const int interval = 10;
